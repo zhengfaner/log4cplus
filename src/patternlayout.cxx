@@ -4,7 +4,7 @@
 // Author:  Tad E. Smith
 //
 //
-// Copyright 2001-2015 Tad E. Smith
+// Copyright 2001-2017 Tad E. Smith
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -1084,8 +1084,7 @@ void
 PatternLayout::init(const tstring& pattern_, unsigned ndcMaxDepth)
 {
     pattern = pattern_;
-    parsedPattern
-        = std::move (pattern::PatternParser(pattern, ndcMaxDepth).parse());
+    parsedPattern = pattern::PatternParser(pattern, ndcMaxDepth).parse();
 
     // Let's validate that our parser didn't give us any NULLs.  If it did,
     // we will convert them to a valid PatternConverter that does nothing so

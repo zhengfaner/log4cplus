@@ -1,4 +1,4 @@
-//  Copyright (C) 2009-2015, Vaclav Haisman. All rights reserved.
+//  Copyright (C) 2009-2017, Vaclav Haisman. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modifica-
 //  tion, are permitted provided that the following conditions are met:
@@ -96,8 +96,10 @@
             || __GNUC__ == 4 && __GNUC_MINOR__ >= 6))  \
     || (defined (_MSC_VER) && _MSC_VER >= 1900)
 #  define LOG4CPLUS_NOEXCEPT noexcept
+#  define LOG4CPLUS_NOEXCEPT_FALSE noexcept(false)
 #else
 #  define LOG4CPLUS_NOEXCEPT /* empty */
+#  define LOG4CPLUS_NOEXCEPT_FALSE /* empty */
 #endif
 
 #if ! defined (UNICODE) && defined (__GNUC__) && __GNUC__ >= 3
